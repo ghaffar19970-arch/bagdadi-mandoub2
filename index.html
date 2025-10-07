@@ -615,6 +615,12 @@ header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid 
     toast.textContent=msg; toast.style.display='block';
     setTimeout(()=> toast.style.display='none', 2000);
   }
+</script><script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./pwabuilder-sw.js')
+      .then(() => console.log('✅ Service Worker Registered'))
+      .catch((err) => console.log('❌ Service Worker Error:', err));
+  }
 </script>
 </body>
 </html>
